@@ -116,7 +116,6 @@ function Install($Disk) {
         'W11SW\Microsoft\Windows\CurrentVersion\OOBE|BypassNRO|1'
         'W11SW\Microsoft\WindowsUpdate\UX\Settings|AllowAutoWindowsUpdateDownloadOverMeteredNetwork|1'
     ) | ForEach-Object { $k, $v, $d = $_ -split '\|'; reg.exe add "HKLM\$k" /v $v /t REG_DWORD /d $d /f | Out-Null }
-    [gc]::Collect()
     reg.exe unload HKLM\W11SW | Out-Null
     reg.exe unload HKLM\W11SYS | Out-Null
 

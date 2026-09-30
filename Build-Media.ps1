@@ -5,7 +5,6 @@ param(
     [int]$UsbDiskNumber = -1,
     [string]$EditionId = 'Core',
     [ValidateSet('max', 'fast')][string]$Compression = 'max',
-    [string]$DiscordWebhook,
     [switch]$DownloadUpdates,
     [switch]$BootEx,
     [switch]$ReuseImage,
@@ -22,7 +21,6 @@ function Adk($c) { cmd.exe /c "call `"$Adk\Deployment Tools\DandISetEnv.bat`" >n
 
 $cfgFile = @("$PSScriptRoot\config.json", "$PSScriptRoot\config.example.json") | Where-Object { Test-Path $_ } | Select-Object -First 1
 $Cfg = Get-Content $cfgFile -Raw | ConvertFrom-Json
-if ($DiscordWebhook) { $Cfg.DiscordWebhook = $DiscordWebhook }
 if ($PSBoundParameters.ContainsKey('BootEx')) { $Cfg.BootEx = [bool]$BootEx }
 
 function Copy-Payload($Dest) {
