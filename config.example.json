@@ -1,12 +1,5 @@
 {
   "DiscordWebhook": "",
   "SysprepDefault": false,
-  "DefaultEditionId": "Core",
-  "DriverPacks": true,
-  "BootEx": false,
-  "TimeZone": "FLE Standard Time",
-  "MaxUpdateRounds": 12,
-  "WaitAlertMinutes": 5,
-  "SoundVolumePercent": 25,
-  "FinalCountdownSec": 120
+  "BootEx": false
 }

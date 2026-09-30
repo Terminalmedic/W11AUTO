@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-  W11AUTO vastausmalli. WinPE-asennin kopioi tämän tiedostoon C:\Windows\Panther\unattend.xml.
-  Levyn osiointi ja levykuvan kirjoitus tehdään WinPE:ssä (Deploy.ps1), joten windowsPE-vaihetta ei tarvita.
-  Asennustili "User" ilman salasanaa + automaattinen kirjautuminen; W11AUTO poistaa automaattikirjautumisen lopuksi.
--->
 <unattend xmlns="urn:schemas-microsoft-com:unattend" xmlns:wcm="http://schemas.microsoft.com/WMIConfig/2002/State">
   <settings pass="specialize">
     <component name="Microsoft-Windows-Shell-Setup" processorArchitecture="amd64" publicKeyToken="31bf3856ad364e35" language="neutral" versionScope="nonSxS">
@@ -20,8 +15,7 @@
       <RunSynchronous>
         <RunSynchronousCommand wcm:action="add">
           <Order>1</Order>
-          <Description>W11AUTO specialize</Description>
-          <Path>powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\W11AUTO\Specialize.ps1</Path>
+          <Path>powershell.exe -NoProfile -ExecutionPolicy Bypass -File C:\W11AUTO\W11AUTO.ps1 -Mode Specialize</Path>
         </RunSynchronousCommand>
       </RunSynchronous>
     </component>
