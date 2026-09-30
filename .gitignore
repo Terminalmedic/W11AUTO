@@ -1,0 +1,9 @@
+# Oma asetustiedosto (sisältää Discord-webhookin) - ei versionhallintaan
+/config.json
+# Rakennustulokset ja suuret tiedostot
+/out/
+/Updates/*.msu
+/Drivers/**/*
+!/Drivers/README.md
+!/Drivers/*/
+!/Drivers/*/.gitkeep
